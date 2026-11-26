@@ -8,8 +8,7 @@ function changeQuantity(value){
         quantity =1
     }
 
-   let total=  product.price * quantity
-
+   let total=  product.price * quantity;
    let productQuantity= document.getElementById('productQuantity').innerText= quantity
 
     document.querySelector('#totalPrice').innerHTML = `RS : ${total}`
@@ -32,7 +31,7 @@ const categories = {
     men: window.menProducts,
     women: window.womenProducts,
     kids: window.kidsProducts,
-    beuty: window.beautyProducts,
+    beauty: window.beautyProducts,
     home: window.homeProducts,
     studio: window.studioProducts
 };
@@ -49,6 +48,20 @@ const product = selectedProducts?.find((item) => {
     return item.id == id;
 });
 
+
+// Get cart items from localStorage
+let cartItems = JSON.parse(
+    localStorage.getItem("addToCartBag") || "[]"
+);
+
+
+let existingItem = cartItems.find(item => {
+    return (String(item.id) == String(id) && category == item.category)
+})
+
+if(existingItem){
+    quantity = existingItem.quantity
+}
 
 
 
@@ -175,7 +188,7 @@ if (product) {
 
                     <button onclick="changeQuantity(-1)">-</button>
 
-                    <span id="productQuantity">1</span>
+                    <span id="productQuantity">${quantity}</span>
 
                     <button onclick="changeQuantity(1)">+</button>
 
@@ -186,7 +199,7 @@ if (product) {
 
                     <div class="detail-buttons">
 
-                          <button onclick="addToCart(${product.id}, '${category}', quantity)">
+                          <button onclick="addToCart(${product.id}, '${category}', quantity, true)">
                                 Add to Cart
                             </button>
 

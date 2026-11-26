@@ -8,7 +8,7 @@ const container = document.getElementById("products");
 window.beautyProducts.forEach((product) => {
     
   container.innerHTML += `
-  <a href="/detail.html?category=beuty&id=${product.id}">
+  <a href="/detail.html?category=beauty&id=${product.id}">
   <div class="product-card">
 
       <div class="product-image">
@@ -32,7 +32,7 @@ window.beautyProducts.forEach((product) => {
           </div>
 
 <button id='addToCartBtn'
-                 onclick="event.preventDefault(); event.stopPropagation(); addToCart(${product.id}, 'beuty')"> Add to Cart
+                 onclick="event.preventDefault(); event.stopPropagation(); addToCart(${product.id}, 'beauty')"> Add to Cart
                  </button>
       </div>
   </div>

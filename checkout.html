@@ -112,10 +112,9 @@
         <div class="order-summary">
           <h2>Your Order</h2>
 
+          <!-- Selected Products -->
           <div id="checkoutProducts">
-            <!-- Products will be added here using JavaScript -->
-
-            <p class="empty-message">Your order items will appear here.</p>
+            <!-- All Products appear here from js -->
           </div>
 
           <div class="summary-divider"></div>
@@ -127,7 +126,7 @@
 
           <div class="summary-row">
             <span>Shipping</span>
-            <span id="checkoutShipping">Rs. 200</span>
+            <span id="checkoutShipping">Rs. 0</span>
           </div>
 
           <div class="summary-row">
@@ -139,7 +138,7 @@
 
           <div class="summary-row summary-total">
             <strong>Total</strong>
-            <strong id="checkoutTotal">Rs. 200</strong>
+            <strong id="checkoutTotal">Rs. 0</strong>
           </div>
 
           <button type="button" class="place-order-btn">Place Order</button>
@@ -151,7 +150,10 @@
 
     <div id="footer"></div>
 
-    <script src="/js/navbar.js"></script>
-    <script src="/js/footer.js"></script>
+    <script src="./js/allProductsArray.js"></script>
+    <script src="./js/global.js"></script>
+    <script src="./js/checkout.js"></script>
+    <script src="./js/navbar.js"></script>
+    <script src="./js/footer.js"></script>
   </body>
 </html>

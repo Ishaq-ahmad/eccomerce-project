@@ -1,18 +1,49 @@
 
 let saveProductArray = JSON.parse(
-    localStorage.getItem("addToCartBag") || "[]"
+    localStorage.getItem("addToCartBag") || []
 );
 bagItemDisplay();
-function addToCart(productId, category, quantity = 1) {
 
+function addToCart(productId, category, quantity= 1 , updateQuantity = false) {
 
-    let product = {
-        id: productId,
-        category: category,
-        quantity: quantity
-    };
+    // if (!Array.isArray(saveProductArray)) {
+    //     saveProductArray = [];
+    // }
+
+    let existingItem = saveProductArray.find(item => {
+        return (
+            String(item.id) === String(productId) &&
+            item.category === category
+        );
+    });
+
+ 
+
     
-    saveProductArray.push(product);
+
+    if (existingItem) {
+
+        if(updateQuantity){
+            // Increase existing product quantity
+        existingItem.quantity = quantity;
+
+        }else{
+            existingItem.quantity += quantity;
+
+        }
+    } else {
+
+        // Add new product
+        let product = {
+            id: productId,
+            category: category,
+            quantity: quantity
+        };
+
+        saveProductArray.push(product);
+    }
+  
+   
 
     localStorage.setItem(
         "addToCartBag",
