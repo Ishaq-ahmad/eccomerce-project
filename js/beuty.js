@@ -8,7 +8,7 @@ const container = document.getElementById("products");
 window.beautyProducts.forEach((product) => {
     
   container.innerHTML += `
-  <a href="/detail.html?category=beauty&id=${product.id}">
+  <a href="./detail.html?category=beauty&id=${product.id}">
   <div class="product-card">
 
       <div class="product-image">
