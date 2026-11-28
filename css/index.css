@@ -1,0 +1,27 @@
+.carousel-section {
+  margin: 40px 0;
+}
+
+.carousel-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 15px;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  width: 100%;
+}
+
+.product-card {
+  flex: 0 0 calc((100% - 45px) / 4);
+}
+
+.carousel-container button {
+  cursor: pointer;
+  padding: 10px;
+  border: none;
+}

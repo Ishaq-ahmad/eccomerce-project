@@ -1,8 +1,4 @@
 
-
-
-
-
 if(document.getElementById('products')){
     const container = document.getElementById("products");
 
